@@ -29,8 +29,8 @@ closureSTAC <- function(api_key) { # nolint
     }
 
     if (is.null(limit)) {
-      print("Defaulting retrieve limit to 12")
-      retrieve_limit <- 12
+      print("Defaulting retrieve limit to 10000")
+      retrieve_limit <- 10000
     } else {
       retrieve_limit <- limit
     }
