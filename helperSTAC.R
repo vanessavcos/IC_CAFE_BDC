@@ -14,13 +14,13 @@ library(magrittr) # Package to use pipe operator %>%
 # stacApp = closureSTAC("key") # nolint
 # items = stacApp$getInterval(startDate = "2022-01-01", endDate = "2022-12-31") # nolint
 # ```
-
 closureSTAC <- function(api_key) { # nolint
   API_KEY <- api_key # nolint
 
   # Recebe duas strings no formato AAAA-MM-DD
   # Também pode receber um limite de quantos dados retornar,
   # se não receber então ele deixa no default (12)
+  #Retorna os objetos com as urls dos itens
   GETINTERVAL <- function(start_date, end_date, limit = NULL) { # nolint
 
     if (missing(start_date) || missing(end_date)) {
@@ -29,8 +29,8 @@ closureSTAC <- function(api_key) { # nolint
     }
 
     if (is.null(limit)) {
-      print("Defaulting retrieve limit to 12")
-      retrieve_limit <- 12
+      print("Defaulting retrieve limit to 10000")
+      retrieve_limit <- 10000
     } else {
       retrieve_limit <- limit
     }
